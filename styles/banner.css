@@ -1,67 +1,144 @@
 .pc-banner {
   position: relative;
   display: flex;
+  min-height: 100svh;
   align-items: center;
-  justify-content: space-between;
+  overflow: hidden;
+}
+.pc-banner::after {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(circle at 82% 52%, color-mix(in srgb, var(--secondary-color) 12%, transparent), transparent 34%),
+    linear-gradient(90deg, var(--page-background) 0%, transparent 70%);
+  content: '';
 }
 
 .pc-banner-content {
   position: relative;
   z-index: 2;
-  width: 100%;
+  width: min(100%, 790px);
+  padding-block: 60px 100px;
 }
 
-.pc-banner-content .pc-banner-subtitle {
-  color: var(--primary-text-color);
-  font-size: 2em;
-  font-weight: 200;
+.pc-banner-content > .pc-eyebrow,
+.pc-banner-content > h1,
+.pc-banner-content > .pc-banner-summary,
+.pc-banner-content > .pc-banner-highlights,
+.pc-banner-content > .pc-banner-actions {
+  animation: banner-content-enter 0.8s both cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pc-banner-content > h1 {
+  animation-delay: 80ms;
+}
+
+.pc-banner-content > .pc-banner-summary {
+  animation-delay: 160ms;
+}
+
+.pc-banner-content > .pc-banner-highlights {
+  animation-delay: 240ms;
+}
+
+.pc-banner-content > .pc-banner-actions {
+  animation-delay: 320ms;
 }
 
 .pc-banner-content h1 {
+  max-width: 780px;
   color: var(--primary-text-color);
-  font-size: 4.2em;
-  font-weight: 700;
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 800;
+  letter-spacing: -0.065em;
+  line-height: 0.98;
 }
 
 .pc-banner-content h1 span {
+  display: block;
   color: var(--secondary-color);
 }
 
 .pc-banner-summary {
-  max-width: 680px;
-  margin: 12px 0;
+  max-width: 690px;
+  margin-top: 26px;
   color: var(--secondary-text-color);
-  font-size: 1.2em;
-  line-height: 1.4em;
-  text-align: justify;
+  font-size: clamp(1rem, 1.5vw, 1.13rem);
+  line-height: 1.75;
+}
+
+.pc-banner-summary strong {
+  color: var(--primary-text-color);
+  font-weight: 700;
+}
+
+.pc-banner-highlights {
+  display: flex;
+  gap: 0;
+  margin-top: 34px;
+}
+
+.pc-banner-highlights li {
+  display: flex;
+  min-width: 150px;
+  flex-direction: column;
+  padding-right: 28px;
+  list-style: none;
+}
+
+.pc-banner-highlights li + li {
+  padding-left: 28px;
+  border-left: 1px solid var(--border-color);
+}
+
+.pc-banner-highlights strong {
+  color: var(--primary-text-color);
+  font-size: 0.98rem;
+}
+
+.pc-banner-highlights span {
+  margin-top: 2px;
+  color: var(--secondary-text-color);
+  font-size: 0.78rem;
+}
+
+.pc-banner-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 34px;
 }
 
 .pc-banner-background {
-  display: none;
   position: absolute;
-  right: 0;
+  right: -5%;
   z-index: -1;
-  width: 100%;
+  display: none;
+  width: 42%;
+  max-width: 500px;
+  opacity: 0.8;
+  user-select: none;
+  pointer-events: none;
 }
 
 body[data-theme='day'] .pc-banner-background.day {
-  display: flex;
-  max-width: 460px;
-  animation: banner-background-day-animation 8s ease-in-out infinite;
+  display: block;
+  animation: banner-background-day-animation 9s ease-in-out infinite;
 }
 
 body[data-theme='night'] .pc-banner-background.night {
-  display: flex;
-  max-width: 520px;
-  filter: drop-shadow(0 0 0.75rem var(--primary-text-color));
-  animation: banner-background-night-animation 8s ease-in-out infinite;
+  display: block;
+  max-width: 540px;
+  filter: drop-shadow(0 0 1rem color-mix(in srgb, var(--secondary-color) 38%, transparent));
+  animation: banner-background-night-animation 9s ease-in-out infinite;
 }
 
 .pc-banner-social-links {
   position: absolute;
-  bottom: 32px;
+  bottom: 34px;
+  left: 48px;
   display: flex;
-  gap: 20px;
+  gap: 18px;
 }
 
 .pc-banner-social-links li {
@@ -69,54 +146,126 @@ body[data-theme='night'] .pc-banner-background.night {
 }
 
 .pc-banner-social-link {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
   color: var(--primary-text-color);
-  font-size: 1.75em;
+  background: var(--surface-background);
+  font-size: 1rem;
   text-decoration: none;
-  transition: color 0.2s;
+  transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 
 .pc-banner-social-link:hover {
+  border-color: var(--secondary-color);
   color: var(--secondary-color);
+  transform: translateY(-2px);
 }
 
 @keyframes banner-background-day-animation {
   0%,
   100% {
-    opacity: 1;
-    transform: translateX(0px);
+    transform: translate(0, 0);
   }
   50% {
-    opacity: 0.8;
-    transform: translateX(-36px);
+    transform: translate(-24px, -10px);
+  }
+}
+
+@keyframes banner-content-enter {
+  from {
+    opacity: 0;
+    filter: blur(4px);
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
   }
 }
 
 @keyframes banner-background-night-animation {
   0%,
   100% {
-    opacity: 1;
-    transform: translateY(0px);
+    transform: translateY(0);
   }
   50% {
-    opacity: 0.6;
-    transform: translateY(36px);
+    opacity: 0.62;
+    transform: translateY(28px);
   }
 }
 
-@media only screen and (max-width: 1200px) {
+@media (max-width: 1060px) {
   .pc-banner-background {
-    display: none !important;
+    right: -10%;
+    width: 38%;
+    opacity: 0.28;
   }
 }
 
-@media only screen and (max-width: 800px) {
-  .pc-banner-content h1 b {
-    display: block;
+@media (max-width: 720px) {
+  .pc-banner {
+    min-height: 860px;
   }
-}
 
-@media only screen and (max-width: 480px) {
+  .pc-banner-content {
+    padding-block: 96px 110px;
+  }
+
   .pc-banner-content h1 {
-    font-size: 3.75em;
+    font-size: clamp(3rem, 14vw, 4.7rem);
+  }
+
+  .pc-banner-highlights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .pc-banner-highlights li {
+    min-width: 0;
+    padding-right: 12px;
+  }
+
+  .pc-banner-highlights li + li {
+    padding-left: 12px;
+  }
+
+  .pc-banner-background {
+    right: -18%;
+    bottom: 10%;
+    width: 65%;
+    opacity: 0.16;
+  }
+
+  .pc-banner-social-links {
+    left: 24px;
+  }
+}
+
+@media (max-width: 520px) {
+  .pc-banner {
+    min-height: 820px;
+  }
+
+  .pc-banner-highlights {
+    gap: 12px;
+    grid-template-columns: 1fr;
+  }
+
+  .pc-banner-highlights li,
+  .pc-banner-highlights li + li {
+    padding: 0 0 10px;
+    border-bottom: 1px solid var(--border-color);
+    border-left: 0;
+  }
+
+  .pc-banner-actions {
+    align-items: stretch;
+    flex-direction: column;
   }
 }

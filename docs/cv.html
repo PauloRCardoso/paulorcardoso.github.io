@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV — Paulo Ricardo</title>
+    <style>
+      @page {
+        size: A4;
+        margin: 14mm 16mm;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: #243142;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 9.5pt;
+        line-height: 1.42;
+      }
+
+      header {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 24px;
+        padding-bottom: 16px;
+        border-bottom: 2px solid #087bb9;
+      }
+
+      h1 {
+        margin: 0 0 4px;
+        color: #14213d;
+        font-size: 27pt;
+        letter-spacing: -1px;
+      }
+
+      .role {
+        margin: 0;
+        color: #087bb9;
+        font-size: 12pt;
+        font-weight: 700;
+      }
+
+      .contacts {
+        display: grid;
+        gap: 3px;
+        text-align: right;
+      }
+
+      a {
+        color: #34495e;
+        text-decoration: none;
+      }
+
+      section {
+        margin-top: 17px;
+      }
+
+      h2 {
+        margin: 0 0 8px;
+        color: #087bb9;
+        font-size: 9pt;
+        letter-spacing: 1.4px;
+        text-transform: uppercase;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .summary {
+        font-size: 10pt;
+        line-height: 1.5;
+      }
+
+      .job {
+        position: relative;
+        margin-top: 12px;
+        padding-left: 16px;
+        border-left: 2px solid #dce7ef;
+        break-inside: avoid;
+      }
+
+      .job:first-of-type {
+        margin-top: 0;
+      }
+
+      .job::before {
+        position: absolute;
+        top: 4px;
+        left: -5px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #087bb9;
+        content: '';
+      }
+
+      .job-heading {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .job h3 {
+        margin: 0;
+        color: #14213d;
+        font-size: 11pt;
+      }
+
+      .period {
+        flex: none;
+        color: #657284;
+        font-size: 8.5pt;
+        font-weight: 700;
+      }
+
+      .job-role {
+        margin: 2px 0 6px;
+        color: #087bb9;
+        font-weight: 700;
+      }
+
+      ul {
+        margin: 5px 0 0;
+        padding-left: 16px;
+      }
+
+      li {
+        margin: 2px 0;
+      }
+
+      .columns {
+        display: grid;
+        gap: 24px;
+        grid-template-columns: 1.2fr 0.8fr;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        margin: 0;
+        padding: 0;
+      }
+
+      .tags li {
+        padding: 4px 7px;
+        border-radius: 4px;
+        color: #25364a;
+        background: #edf4f8;
+        font-size: 8.5pt;
+        font-weight: 700;
+        list-style: none;
+      }
+
+      .sectors {
+        color: #4f5d6c;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>Paulo Ricardo</h1>
+        <p class="role">Desenvolvedor Full Stack · Web &amp; Mobile</p>
+      </div>
+      <div class="contacts">
+        <a href="mailto:paulloclara@gmail.com">paulloclara@gmail.com</a>
+        <a href="https://paulloclara.dev">paulloclara.dev</a>
+        <a href="https://www.linkedin.com/in/paulloclara/">linkedin.com/in/paulloclara</a>
+        <a href="https://github.com/paulloclara">github.com/paulloclara</a>
+      </div>
+    </header>
+
+    <section>
+      <h2>Perfil</h2>
+      <p class="summary">
+        Desenvolvedor Full Stack com +7 anos de experiência no desenvolvimento de aplicações web e
+        mobile, atuando desde a concepção e arquitetura até a evolução e manutenção de plataformas
+        em produção. Experiência sólida com Vue.js, TypeScript, Python, Django e React Native.
+        Responsável pela criação e manutenção do frontend das plataformas, atuando também no
+        backend com APIs, regras de negócio e integrações.
+      </p>
+    </section>
+
+    <section>
+      <h2>Experiência profissional</h2>
+      <article class="job">
+        <div class="job-heading">
+          <h3>Gojus</h3>
+          <span class="period">Out/2020 — Atual</span>
+        </div>
+        <p class="job-role">Desenvolvedor Full Stack</p>
+        <ul>
+          <li>
+            Criação, evolução e manutenção do frontend dos produtos Gojus e Orby com Vue.js e
+            TypeScript; atuação no backend com Python e Django.
+          </li>
+          <li>
+            Desenvolvimento de APIs, regras de negócio, integrações e manutenção de funcionalidades
+            existentes.
+          </li>
+          <li>
+            Desenvolvimento mobile com React Native nos aplicativos Gojus e Orby, incluindo versões
+            e customizações específicas para clientes.
+          </li>
+          <li>
+            Evolução do Orby, plataforma de gestão utilizada por instituições como OAB-PI, ALEPI e
+            prefeituras como Picos e São Miguel.
+          </li>
+          <li>
+            Participação anterior nos produtos Obmed e Obmed+Saúde, voltados ao setor de saúde.
+          </li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-heading">
+          <h3>Lojas Engecon</h3>
+          <span class="period">Out/2022 — Jan/2024</span>
+        </div>
+        <p class="job-role">Desenvolvedor Web</p>
+        <p>
+          Desenvolvimento do frontend do e-commerce de materiais de construção e participação no
+          sistema ERP e em funcionalidades mobile.
+        </p>
+      </article>
+
+      <article class="job">
+        <div class="job-heading">
+          <h3>PlanoPDV</h3>
+          <span class="period">Nov/2023 — Jan/2024</span>
+        </div>
+        <p class="job-role">Desenvolvedor Web</p>
+        <p>
+          Criação da landing page e do frontend do ERP voltado à gestão de micro e pequenas empresas.
+        </p>
+      </article>
+
+      <article class="job">
+        <div class="job-heading">
+          <h3>Next Home</h3>
+          <span class="period">Abr/2021 — Ago/2021</span>
+        </div>
+        <p class="job-role">Desenvolvedor Web</p>
+        <p>
+          Reescrita das interfaces do site, marketplace imobiliário e sistema de gerenciamento da
+          plataforma.
+        </p>
+      </article>
+    </section>
+
+    <section class="columns">
+      <div>
+        <h2>Tecnologias</h2>
+        <ul class="tags">
+          <li>Vue.js 2 e 3</li>
+          <li>TypeScript</li>
+          <li>JavaScript</li>
+          <li>Python</li>
+          <li>Django</li>
+          <li>React Native</li>
+          <li>Nuxt.js</li>
+          <li>Node.js</li>
+          <li>Tailwind CSS</li>
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>Docker</li>
+          <li>Git</li>
+          <li>Linux</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Setores</h2>
+        <p class="sectors">
+          Jurídico · Gestão governamental · Saúde · Imobiliário · Materiais de construção · ERP ·
+          E-commerce
+        </p>
+      </div>
+    </section>
+  </body>
+</html>
