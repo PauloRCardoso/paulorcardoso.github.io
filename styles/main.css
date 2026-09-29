@@ -323,6 +323,10 @@ body[data-theme='night'] #pc-switch-theme .fa-sun {
   list-style: none;
 }
 
+.pc-contact-links li:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
 .pc-contact-links a {
   display: flex;
   min-height: 92px;
