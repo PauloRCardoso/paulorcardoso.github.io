@@ -30,6 +30,29 @@
   font-size: 1.15em;
 }
 
+/* O caminho do logo acompanha a área de Hallownest em que a página está. */
+.pc-header-logo-cursor {
+  display: inline-block;
+  width: 0.5em;
+  height: 1.05em;
+  margin-left: 4px;
+  background: var(--secondary-text-color);
+  vertical-align: -0.18em;
+  animation: logo-cursor 1s steps(1) infinite;
+}
+
+@keyframes logo-cursor {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pc-header-logo-cursor {
+    animation: none;
+  }
+}
+
 .pc-header-links {
   display: flex;
   align-items: center;
@@ -85,6 +108,21 @@
   border-color: var(--secondary-color);
 }
 
+/* Abre espaço para o caminho mais longo do logo (~/Hallownest/ForgottenCrossroads$). */
+@media (min-width: 721px) and (max-width: 900px) {
+  .pc-header {
+    padding-inline: 32px;
+  }
+
+  .pc-header-logo {
+    font-size: 0.95rem;
+  }
+
+  .pc-header-links {
+    gap: 18px;
+  }
+}
+
 @media (max-width: 720px) {
   .pc-header {
     align-items: stretch;
@@ -116,6 +154,11 @@
 }
 
 @media (max-width: 520px) {
+  .pc-header-logo {
+    font-size: 0.88rem;
+    white-space: nowrap;
+  }
+
   .pc-header-links {
     gap: 18px;
   }

@@ -10,9 +10,11 @@
   left: 50%;
   width: 100vw;
   z-index: -2;
-  background:
-    radial-gradient(circle at min(82%, calc(50% + 390px)) 52%, color-mix(in srgb, var(--secondary-color) 12%, transparent), transparent 34%),
-    linear-gradient(90deg, var(--page-background) 0%, transparent 70%);
+  background: radial-gradient(
+    circle at min(82%, calc(50% + 390px)) 52%,
+    color-mix(in srgb, var(--secondary-color) 12%, transparent),
+    transparent 34%
+  );
   content: '';
   transform: translateX(-50%);
 }

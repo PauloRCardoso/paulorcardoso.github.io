@@ -55,16 +55,61 @@
     <link rel="stylesheet" href="styles/banner.css" />
     <link rel="stylesheet" href="styles/skills.css" />
     <link rel="stylesheet" href="styles/projects.css" />
+    <link rel="stylesheet" href="styles/hallownest.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/gsap.min.js"
+      integrity="sha512-oJ8QbaQThQoJZ7oEv+29jfPM6CcP+zUxh3PKJs1vyOhx0UraUrE7PQgeItu3dOuCJyrzWpoYMsVjkkPEBzbUqw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+      defer
+    ></script>
+    <script src="hallownest.js" defer></script>
     <script src="scripts.js" defer></script>
     <title>Paulo Ricardo | Desenvolvedor Full Stack</title>
   </head>
   <body data-theme="day">
     <a class="pc-skip-link" href="#main-content">Ir para o conteúdo</a>
 
+    <div class="pc-world" aria-hidden="true">
+      <div class="pc-area" data-theme-area="day" data-depth="1" data-area="dirtmouth" data-name="Dirtmouth">
+        <div class="pc-area-side pc-area-side--left"></div>
+        <div class="pc-area-side pc-area-side--right"></div>
+      </div>
+      <div class="pc-area" data-theme-area="day" data-depth="2" data-area="greenpath" data-name="Greenpath">
+        <div class="pc-area-side pc-area-side--left"></div>
+        <div class="pc-area-side pc-area-side--right"></div>
+      </div>
+      <div class="pc-area" data-theme-area="day" data-depth="3" data-area="queens-gardens" data-name="Queen's Gardens">
+        <div class="pc-area-side pc-area-side--left"></div>
+        <div class="pc-area-side pc-area-side--right"></div>
+      </div>
+      <div class="pc-area" data-theme-area="day" data-depth="4" data-area="white-palace" data-name="White Palace">
+        <div class="pc-area-side pc-area-side--left"></div>
+        <div class="pc-area-side pc-area-side--right"></div>
+      </div>
+      <div class="pc-area" data-theme-area="night" data-depth="1" data-area="forgotten-crossroads" data-name="Forgotten Crossroads">
+        <div class="pc-area-side pc-area-side--left"></div>
+        <div class="pc-area-side pc-area-side--right"></div>
+      </div>
+      <div class="pc-area" data-theme-area="night" data-depth="2" data-area="city-of-tears" data-name="City of Tears">
+        <div class="pc-area-side pc-area-side--left"></div>
+        <div class="pc-area-side pc-area-side--right"></div>
+      </div>
+      <div class="pc-area" data-theme-area="night" data-depth="3" data-area="deepnest" data-name="Deepnest">
+        <div class="pc-area-side pc-area-side--left"></div>
+        <div class="pc-area-side pc-area-side--right"></div>
+      </div>
+      <div class="pc-area" data-theme-area="night" data-depth="4" data-area="the-abyss" data-name="The Abyss">
+        <div class="pc-area-side pc-area-side--left"></div>
+        <div class="pc-area-side pc-area-side--right"></div>
+      </div>
+    </div>
+
     <div class="pc-page-container">
       <header class="pc-header">
         <a class="pc-header-logo" href="#home" aria-label="Paulo Ricardo — início">
-          ~/<span>Paulo</span>/<span>Ricardo</span><b>$</b>
+          ~/<span class="pc-header-logo-path"><span>Paulo</span>/<span>Ricardo</span></span><b>$</b
+          ><span class="pc-header-logo-cursor" aria-hidden="true"></span>
         </a>
         <nav aria-label="Navegação principal">
           <ul class="pc-header-links">
@@ -78,7 +123,7 @@
       </header>
 
       <main class="pc-sections" id="main-content">
-        <section class="pc-banner" id="home">
+        <section class="pc-banner" id="home" data-depth="1">
           <div class="pc-banner-content">
             <p class="pc-eyebrow">Desenvolvedor Full Stack · Web &amp; Mobile</p>
             <h1>Produtos digitais <span>do frontend ao backend.</span></h1>
@@ -157,7 +202,7 @@
           </ul>
         </section>
 
-        <section class="pc-skills" id="about">
+        <section class="pc-skills" id="about" data-depth="2">
           <div class="pc-section-heading pc-skills-heading">
             <p class="pc-eyebrow">Como eu atuo</p>
             <h2>Código com <b>contexto de produto.</b></h2>
@@ -237,7 +282,7 @@
           </div>
         </section>
 
-        <section class="pc-projects" id="projects">
+        <section class="pc-projects" id="projects" data-depth="3">
           <div class="pc-section-heading pc-projects-infos">
             <p class="pc-eyebrow">Trabalho em produção</p>
             <h2>Produtos que traduzem minha <b>experiência.</b></h2>
@@ -440,7 +485,7 @@
           </div>
         </section>
 
-        <section class="pc-contact" id="contact">
+        <section class="pc-contact" id="contact" data-depth="4">
           <div class="pc-contact-copy">
             <p class="pc-eyebrow">Vamos conversar</p>
             <h2>Tem um produto para <span>construir ou evoluir?</span></h2>

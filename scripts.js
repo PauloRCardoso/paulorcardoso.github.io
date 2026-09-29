@@ -24,6 +24,7 @@ function applyTheme(theme) {
   themeButton.setAttribute('aria-label', THEMES[selectedTheme].buttonLabel)
   themeButton.setAttribute('aria-pressed', String(selectedTheme === 'night'))
   themeColor.setAttribute('content', THEMES[selectedTheme].themeColor)
+  showHallownestArea()
 }
 
 function runThemeScript() {
@@ -126,6 +127,7 @@ function runScrollRevealScript() {
 }
 
 runThemeScript()
+runHallownestScript()
 runSmoothScrollScript()
 runScrollRevealScript()
 setCurrentYear()
