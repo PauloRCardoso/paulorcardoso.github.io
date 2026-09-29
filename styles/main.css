@@ -90,10 +90,10 @@ button:focus-visible {
 
 .pc-page-container {
   min-height: 100vh;
+  overflow-x: clip;
 }
 
 .pc-sections,
-.pc-header,
 .pc-footer {
   width: min(100%, var(--page-width));
   margin-inline: auto;
@@ -385,7 +385,8 @@ body[data-theme='night'] #pc-switch-theme .fa-sun {
 .pc-footer {
   display: flex;
   justify-content: space-between;
-  padding: 0 48px 36px;
+  /* right side leaves room for the fixed theme button */
+  padding: 0 88px 36px 48px;
   color: var(--secondary-text-color);
   font-size: 0.9rem;
 }
@@ -422,7 +423,7 @@ body[data-theme='night'] #pc-switch-theme .fa-sun {
   }
 
   .pc-footer {
-    padding-inline: 24px;
+    padding-inline: 24px 88px;
   }
 }
 

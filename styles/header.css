@@ -1,17 +1,17 @@
 .pc-header {
   position: fixed;
   top: 0;
-  left: 50%;
+  right: 0;
+  left: 0;
   z-index: 9;
   display: flex;
   min-height: var(--header-height);
   align-items: center;
   justify-content: space-between;
-  padding: 12px 48px;
+  padding: 12px max(48px, calc((100% - var(--page-width)) / 2 + 48px));
   border-bottom: 1px solid color-mix(in srgb, var(--border-color) 70%, transparent);
   background: var(--header-background);
   backdrop-filter: blur(16px);
-  transform: translateX(-50%);
 }
 .pc-header-logo {
   flex: none;

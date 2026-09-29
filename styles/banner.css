@@ -3,16 +3,18 @@
   display: flex;
   min-height: 100svh;
   align-items: center;
-  overflow: hidden;
 }
 .pc-banner::after {
   position: absolute;
-  inset: 0;
+  inset-block: 0;
+  left: 50%;
+  width: 100vw;
   z-index: -2;
   background:
-    radial-gradient(circle at 82% 52%, color-mix(in srgb, var(--secondary-color) 12%, transparent), transparent 34%),
+    radial-gradient(circle at min(82%, calc(50% + 390px)) 52%, color-mix(in srgb, var(--secondary-color) 12%, transparent), transparent 34%),
     linear-gradient(90deg, var(--page-background) 0%, transparent 70%);
   content: '';
+  transform: translateX(-50%);
 }
 
 .pc-banner-content {
@@ -51,7 +53,7 @@
   color: var(--primary-text-color);
   font-size: clamp(3rem, 7vw, 6rem);
   font-weight: 800;
-  letter-spacing: -0.065em;
+  letter-spacing: -0.04em;
   line-height: 0.98;
 }
 
