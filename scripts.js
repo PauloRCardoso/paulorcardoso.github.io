@@ -47,7 +47,7 @@ function playThemeSound(theme) {
 
   backgroundSound.pause()
   source.src = THEME_SOUNDS[theme]
-  backgroundSound.volume = 0.05
+  backgroundSound.volume = 0.075
   backgroundSound.load()
   backgroundSound.play().catch(() => {
     // Alguns navegadores podem bloquear áudio mesmo após uma interação.
@@ -100,11 +100,7 @@ function runScrollRevealScript() {
     element.classList.add('pc-reveal')
   })
 
-  const staggeredSelectors = [
-    '.pc-work-card',
-    '.pc-projects-item--featured',
-    '.pc-history-card',
-  ]
+  const staggeredSelectors = ['.pc-work-card', '.pc-projects-item--featured', '.pc-history-card']
 
   staggeredSelectors.forEach((selector) => {
     document.querySelectorAll(selector).forEach((element, index) => {
